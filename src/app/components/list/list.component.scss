@@ -1,0 +1,26 @@
+
+div {
+  max-width: 600px;
+  margin: 0 auto;
+  h2 { text-align: center;}
+  .mdc-list {
+    .mdc-list-item {
+
+      display: block;
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 30px;
+      cursor: pointer;
+      .mat-list-item-title {
+        font-weight: bold;
+
+      }
+
+      // Media query para hacer que la lista sea responsive
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+    }
+  }
+
+}

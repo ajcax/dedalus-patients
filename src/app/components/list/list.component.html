@@ -1,5 +1,5 @@
 <div *ngIf="showList">
-  <h3>Lista de pacientes</h3>
+  <h2>Lista de pacientes</h2>
   <mat-list>
     <mat-list-item *ngFor="let patient of patients" (click)="goToDetail(patient)">
       <span matListItemTitle>{{ patient.name[0].given[0] }}</span>

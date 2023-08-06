@@ -1,21 +1,21 @@
 <div *ngIf="patient">
-  <h2>Detalle</h2>
-  <p>Nombre: {{ patient.name[0].given.join(' ') }}</p>
-  <p>Familia: {{ patient.name[0].family }}</p>
-  <p *ngIf="patient.gender">Genero: {{ patient.gender }}</p>
-  <p *ngIf="patient.birthDate">Fecha de nacimiento: {{ patient.birthDate }}</p>
-  <div *ngIf="patient.address">
-    <span>Dirección:</span>
-    <div *ngIf="patient.address[0].city"><span>ciudad: {{ patient.address[0].city }}</span></div>
-    <div *ngIf="patient.address[0].postalCode"><span>codigo postal: {{ patient.address[0].postalCode }}</span></div>
-    <div *ngIf="patient.address[0].state"><span>Estado: {{ patient.address[0].state }}</span></div>
-    <div *ngIf="patient.address[0].use"><span>Uso: {{ patient.address[0].use }}</span></div>
-  </div>
-  <div *ngIf="patient.contact">
-    <span>Contacto:</span>
-    <div *ngIf="patient.contact[0].name"><span>nombre: {{ patient.contact[0].name.given }}</span></div>
-    <div *ngIf="patient.contact[0].name.family"><span>familia: {{ patient.contact[0].name.family }}</span></div>
-    <div *ngIf="patient.contact[0].telecom[0].value"><span>telefono contacto: {{ patient.contact[0].telecom[0].value }}</span></div>
-  </div>
+  <h2>Detalle de paciente</h2>
+  <span class="field">Nombre: <span class="content">{{ patient.name[0].given }}</span></span>
+  <span class="field">Familia: <span class="content">{{ patient.name[0].family }}</span></span>
+  <span class="field" *ngIf="patient.gender">Genero: <span class="content">{{ patient.gender }}</span></span>
+  <span class="field" *ngIf="patient.birthDate">Fecha de nacimiento: <span class="content">{{ patient.birthDate }}</span></span>
+  <span *ngIf="patient.address" class="sub-tittle">Dirección:
+    <span class="field" *ngIf="patient.address[0].city"><span class="content">ciudad: {{ patient.address[0].city }}</span></span>
+    <span class="field" *ngIf="patient.address[0].postalCode"><span class="content">codigo postal: {{ patient.address[0].postalCode }}</span></span>
+    <span class="field" *ngIf="patient.address[0].state"><span class="content">Estado: {{ patient.address[0].state }}</span></span>
+    <span class="field" *ngIf="patient.address[0].use"><span class="content">Uso: {{ patient.address[0].use }}</span></span>
+  </span>
+  <span *ngIf="patient.contact" class="sub-tittle">Contacto:
+    <span class="field" *ngIf="patient.contact[0].name"><span class="content">nombre: {{ patient.contact[0].name.given }}</span></span>
+    <span class="field" *ngIf="patient.contact[0].name.family"><span class="content">familia: {{ patient.contact[0].name.family }}</span></span>
+    <span class="field" *ngIf="patient.contact[0].telecom[0].value"><span class="content">telefono contacto: {{ patient.contact[0].telecom[0].value }}</span></span>
+  </span>
+  <button class="btn-back" mat-raised-button (click)="goBackToList()">Volver</button>
 </div>
+
 

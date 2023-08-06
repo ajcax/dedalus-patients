@@ -95,7 +95,9 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.sass"
+              "src/styles.sass",
+              "src/app/components/list/list.component.scss",
+              "src/app/components/detail/detail.component.scss"
             ],
             "scripts": []
           }
