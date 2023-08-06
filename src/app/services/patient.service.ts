@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Patient } from '../interfaces/patient.interface';
+import { FhirApiService } from './fhirApi.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +9,8 @@ import { Patient } from '../interfaces/patient.interface';
 export class PatientService {
   private apiURL = 'http://hapi.fhir.org/baseR4/Patient';
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private fhirApiService: FhirApiService) {}
   getPatients(): Observable<Patient[]> {
-    return this.http.get<any>(this.apiURL).pipe(
-      map((data) => data.entry.map((entry: any) => entry.resource as Patient))
-    );
+    return this.fhirApiService.getPatientsFromFhir();
   }
 }

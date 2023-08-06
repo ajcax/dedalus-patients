@@ -6,17 +6,16 @@
   <p *ngIf="patient.birthDate">Fecha de nacimiento: {{ patient.birthDate }}</p>
   <div *ngIf="patient.address">
     <span>Dirección:</span>
-    <div><span>ciudad: {{ patient.address[0].city }}</span></div>
-    <div><span>codigo postal: {{ patient.address[0].postalCode }}</span></div>
-    <div><span>Estado: {{ patient.address[0].state }}</span></div>
-    <div><span>Uso: {{ patient.address[0].use }}</span></div>
+    <div *ngIf="patient.address[0].city"><span>ciudad: {{ patient.address[0].city }}</span></div>
+    <div *ngIf="patient.address[0].postalCode"><span>codigo postal: {{ patient.address[0].postalCode }}</span></div>
+    <div *ngIf="patient.address[0].state"><span>Estado: {{ patient.address[0].state }}</span></div>
+    <div *ngIf="patient.address[0].use"><span>Uso: {{ patient.address[0].use }}</span></div>
   </div>
   <div *ngIf="patient.contact">
     <span>Contacto:</span>
-    <div><span>nombre: {{ patient.contact[0].name.given }}</span></div>
-    <div><span>familia: {{ patient.contact[0].name.family }}</span></div>
-    <div><span>telefono contacto: {{ patient.contact[0].telecom[0].value }}</span></div>
-
+    <div *ngIf="patient.contact[0].name"><span>nombre: {{ patient.contact[0].name.given }}</span></div>
+    <div *ngIf="patient.contact[0].name.family"><span>familia: {{ patient.contact[0].name.family }}</span></div>
+    <div *ngIf="patient.contact[0].telecom[0].value"><span>telefono contacto: {{ patient.contact[0].telecom[0].value }}</span></div>
   </div>
 </div>
 

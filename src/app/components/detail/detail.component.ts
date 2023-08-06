@@ -17,6 +17,7 @@ export class DetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.patientService.getPatients().subscribe(data => {
       this.patient = data.find(patient => patient.id === id);
+      console.log(this.patient)
      });
   }
 }
