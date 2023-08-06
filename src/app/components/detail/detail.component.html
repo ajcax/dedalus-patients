@@ -1,0 +1,22 @@
+<div *ngIf="patient">
+  <h2>Detalle</h2>
+  <p>Nombre: {{ patient.name[0].given.join(' ') }}</p>
+  <p>Familia: {{ patient.name[0].family }}</p>
+  <p *ngIf="patient.gender">Genero: {{ patient.gender }}</p>
+  <p *ngIf="patient.birthDate">Fecha de nacimiento: {{ patient.birthDate }}</p>
+  <div *ngIf="patient.address">
+    <span>Dirección:</span>
+    <div><span>ciudad: {{ patient.address[0].city }}</span></div>
+    <div><span>codigo postal: {{ patient.address[0].postalCode }}</span></div>
+    <div><span>Estado: {{ patient.address[0].state }}</span></div>
+    <div><span>Uso: {{ patient.address[0].use }}</span></div>
+  </div>
+  <div *ngIf="patient.contact">
+    <span>Contacto:</span>
+    <div><span>nombre: {{ patient.contact[0].name.given }}</span></div>
+    <div><span>familia: {{ patient.contact[0].name.family }}</span></div>
+    <div><span>telefono contacto: {{ patient.contact[0].telecom[0].value }}</span></div>
+
+  </div>
+</div>
+

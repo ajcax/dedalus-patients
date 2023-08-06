@@ -7,5 +7,20 @@ export interface Patient {
   ];
   gender: string;
   birthDate: string;
-
+  address: [{
+    city: string;
+    postalCode: string;
+    state: string;
+    use: string;
+  }]
+  contact:[{
+    name: {
+      family: string;
+      given: string[];
+    };
+    given: string[];
+    telecom: [{
+      value: string
+    }]
+  }]
 }

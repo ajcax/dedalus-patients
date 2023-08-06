@@ -10,17 +10,19 @@ import { Patient } from '../../interfaces/patient.interface';
 })
 export class ListComponent implements OnInit {
   patients: Patient[] = [];
+  showList = true;
 
   constructor(private patientService: PatientService, private router: Router) { }
 
   ngOnInit(): void {
     this.patientService.getPatients().subscribe(data => {
-      console.log(data)
       this.patients = data.map(entry => entry);
+      this.showList = true;
     });
-   }
+  }
 
-   goToDetail(patient: Patient): void {
-     this.router.navigate(['/detail', patient.id]);
-   }
+  goToDetail(patient: Patient): void {
+    this.showList = false;
+    this.router.navigate(['/detail', patient.id]);
+  }
 }

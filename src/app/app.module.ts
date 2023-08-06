@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './components/app.component';
 import { ListComponent } from './components/list/list.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
+    AppComponent,
     ListComponent,
     DetailComponent
   ],
@@ -20,6 +22,6 @@ import { MatListModule } from '@angular/material/list';
     MatListModule
   ],
   providers: [],
-  bootstrap: [ListComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

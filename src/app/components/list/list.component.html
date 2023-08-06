@@ -1,9 +1,12 @@
-<h3>Lista de pacientes</h3>
-<mat-list>
-  <mat-list-item *ngFor="let patient of patients" (click)="goToDetail(patient)">
-    <span matListItemTitle>{{ patient.name[0].given[0] }}</span>
-    <span matListItemLine>Familia: {{ patient.name[0].family }}</span>
-    <span *ngIf="patient.birthDate" matListItemLine>Fecha de Nacimiento: {{ patient.birthDate }}</span>
-    <span *ngIf="patient.gender" matListItemLine>Genero: {{ patient.gender }}</span>
-  </mat-list-item>
-</mat-list>
+<div *ngIf="showList">
+  <h3>Lista de pacientes</h3>
+  <mat-list>
+    <mat-list-item *ngFor="let patient of patients" (click)="goToDetail(patient)">
+      <span matListItemTitle>{{ patient.name[0].given[0] }}</span>
+      <span matListItemLine>Familia: {{ patient.name[0].family }}</span>
+      <span *ngIf="patient.birthDate" matListItemLine>Fecha de Nacimiento: {{ patient.birthDate }}</span>
+      <span *ngIf="patient.gender" matListItemLine>Genero: {{ patient.gender }}</span>
+    </mat-list-item>
+  </mat-list>
+</div>
+
